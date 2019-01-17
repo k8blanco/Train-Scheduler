@@ -14,6 +14,17 @@
 
   var database = firebase.database();
 
+//Initialize Parallax
+  $(document).ready(function(){
+    $('.parallax').parallax();
+    });
+
+//Initialize Floating Action Button
+    $(document).ready(function(){
+        $('.fixed-action-btn').floatingActionButton();
+      });
+            
+
   //"Add Train" Button Click Event
   $("#addTrainBtn").on("click", function(event) {
       event.preventDefault();
@@ -44,7 +55,8 @@
     console.log(newTrain.trainStart);
     console.log(newTrain.whenAdded);
 
-    alert("New Train Added!");
+    // alert("New Train Added!");
+    M.toast({html: 'New train added!', classes:'rounded white-text black lighten-1',});
 
     //Clears text boxes
     $("#trainNameInput").val("");
